@@ -252,6 +252,13 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
+        nav.footer-section {
+            width: 100%;
+            padding: 1.2rem 5%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         @keyframes slideDown {
             from {
                 transform: translateY(-100%);
@@ -920,7 +927,11 @@
         .particle:nth-child(10) { left: 15%; animation-delay: 3.5s; animation-duration: 15.5s; }
 
         /* Enhanced hover effects */
-        .nav-links a {
+        .nav-links a:hover {
+            color: var(--secondary-red);
+        }
+
+        .nav {
             position: relative;
             overflow: hidden;
         }
