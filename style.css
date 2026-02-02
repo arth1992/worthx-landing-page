@@ -85,12 +85,36 @@ nav.footer-section {
 }
 
 .logo {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+}
+
+.brand-name {
     font-family: 'Alibaba Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary-dark);
     letter-spacing: -0.02em;
-    cursor: pointer;
+}
+
+.brand-tagline {
+    font-family: 'A Day Without Sun', sans-serif;
+    font-size: 0.9rem;
+    color: var(--secondary-red);
+    margin-top: 0.2rem;
+    letter-spacing: 0.5px;
 }
 
 .nav-links {
