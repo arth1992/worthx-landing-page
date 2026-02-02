@@ -970,6 +970,218 @@ footer {
     opacity: 0.6;
 }
 
+/* Trusted By Section */
+.trusted-by {
+    padding: 3rem 5%;
+    background: var(--light-gray);
+    text-align: center;
+    border-bottom: 1px solid rgba(32, 44, 60, 0.05);
+}
+
+.trusted-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-dark);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.client-logo {
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.client-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    color: var(--secondary-red);
+}
+
+/* Industries Section */
+.industries {
+    padding: 8rem 5%;
+    background: var(--white);
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.industry-card {
+    background: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.industry-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(185, 95, 79, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.industry-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.industry-card h3 {
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-dark);
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 8rem 5%;
+    background: var(--white);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.portfolio-card {
+    background: var(--bg-pastel);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.portfolio-content {
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(32,44,60,0.9), rgba(32,44,60,0));
+    width: 100%;
+    color: white;
+}
+
+.portfolio-tag {
+    background: var(--secondary-red);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.portfolio-card h3 {
+    font-family: 'Alibaba Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.portfolio-card p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.btn-text {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-text:hover {
+    margin-left: 5px;
+    color: var(--secondary-red);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 8rem 5%;
+    background: var(--light-gray);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.testimonial-card::before {
+    content: '"';
+    font-family: 'Alibaba Sans', serif;
+    font-size: 6rem;
+    color: var(--secondary-red);
+    opacity: 0.1;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    line-height: 1;
+}
+
+.quote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.author h4 {
+    font-family: 'Alibaba Sans', sans-serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.2rem;
+}
+
+.author p {
+    font-size: 0.9rem;
+    color: var(--secondary-red);
+    font-weight: 600;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
     .hero h1 {
