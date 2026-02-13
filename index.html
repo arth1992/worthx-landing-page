@@ -15,7 +15,7 @@
     <meta name="revisit-after" content="7 days">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.worthxtechnologies.com/">
+    <link rel="canonical" href="https://www.worthx.net/">
     
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
@@ -30,10 +30,10 @@
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.worthxtechnologies.com/">
+    <meta name="twitter:url" content="https://www.worthx.net/">
     <meta name="twitter:title" content="WorthX Technologies | Secure & Scalable Technology Solutions">
     <meta name="twitter:description" content="Transform your business with innovative cloud services, custom software, and digital transformation solutions. 99.9% uptime, 24/7 support.">
-    <meta name="twitter:image" content="https://www.worthxtechnologies.com/twitter-image.jpg">
+    <meta name="twitter:image" content="https://www.worthx.net/twitter-image.jpg">
     <meta name="twitter:creator" content="@worthxtech">
     
     <!-- Additional SEO Tags -->
@@ -68,24 +68,21 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "WorthX Technologies",
-      "url": "https://www.worthxtechnologies.com",
-      "logo": "https://www.worthxtechnologies.com/logo.png",
-      "description": "Leading provider of secure, scalable, and innovative technology solutions including cloud services, custom software development, and digital transformation.",
-      "foundingDate": "2020",
+      "url": "https://www.worthx.net",
+      "logo": "https://www.worthx.net/logo.png",
+      "description": "Leading provider of secure, scalable, and innovative technology solutions including cloud services, custom software development, and digital transformation. Expert in educational technologies. Custom software build for educational institutions.",
+      "foundingDate": "2026",
       "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
+        "@type": "Ahmedabad",
+        "addressCountry": "IN"
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-XXX-XXX-XXXX",
+        "telephone": "+91-9601744475",
         "contactType": "Customer Service",
         "availableLanguage": ["English"]
       },
       "sameAs": [
-        "https://www.linkedin.com/company/worthxtech",
-        "https://twitter.com/worthxtech",
-        "https://www.facebook.com/worthxtech"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -100,10 +97,10 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "WorthX Technologies",
-      "url": "https://www.worthxtechnologies.com",
+      "url": "https://www.worthx.net",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.worthxtechnologies.com/search?q={search_term_string}",
+        "target": "https://www.worthx.net/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -113,7 +110,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "@id": "https://www.worthxtechnologies.com/#product",
+      "@id": "https://www.worthx.net/#product",
       "name": "Technology Solutions by WorthX",
       "description": "Comprehensive technology solutions including cloud services, custom software, and digital transformation",
       "brand": {
@@ -191,6 +188,7 @@
     }
     </script>
     <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
     <!-- Navigation -->
@@ -518,6 +516,69 @@
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
+            });
+        });
+
+        // Google Analytics Event Tracking
+        const trackEvent = (eventName, eventParams) => {
+            if (typeof gtag === 'function') {
+                gtag('event', eventName, eventParams);
+            }
+        };
+
+        // Track Navigation clicks
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                trackEvent('navigation_click', {
+                    'link_text': link.textContent.trim(),
+                    'target_url': link.getAttribute('href')
+                });
+            });
+        });
+
+        // Track CTA button clicks
+        document.querySelectorAll('.cta-nav, .btn-primary, .btn-secondary, .btn-cta').forEach(button => {
+            button.addEventListener('click', () => {
+                trackEvent('cta_click', {
+                    'button_text': button.textContent.trim(),
+                    'location': button.closest('section')?.id || 'header'
+                });
+            });
+        });
+
+        // Track Portfolio views
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3')?.textContent;
+                trackEvent('portfolio_view', {
+                    'project_title': title
+                });
+            });
+        });
+
+        // Track Section Visibility (Interests)
+        const interestObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    trackEvent('section_view', {
+                        'section_id': entry.target.id || entry.target.className
+                    });
+                    interestObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('section').forEach(section => {
+            interestObserver.observe(section);
+        });
+
+        // Track Contact link clicks
+        document.querySelectorAll('a[href^="mailto:"]').forEach(mailLink => {
+            mailLink.addEventListener('click', () => {
+                trackEvent('contact_click', {
+                    'type': 'email',
+                    'email': mailLink.getAttribute('href').replace('mailto:', '')
+                });
             });
         });
 
